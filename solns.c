@@ -54,7 +54,7 @@ int factors(int n, int a[])
   int count=0;
   for(int i=0;i<100;++i)
   {
-    while(n>0 && n!=1)
+    if(n>0 && n!=1)
     {
       for(int j=2;j<100;j++)
       {
@@ -65,8 +65,11 @@ int factors(int n, int a[])
           n=n/j;
           break;
         }
+        
       }
     }
+    else
+      break;
   }
     return count;
 }
